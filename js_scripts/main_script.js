@@ -11,6 +11,7 @@
 
 
 const price = parseFloat(0.21)
+ 
 
 // chiedi quanti chilometri dovra percorrere
 
@@ -30,11 +31,30 @@ console.log(prezzo);
 
 //ricalcola sottraendo il 20% per i minori di anni 18
 
+if (userAge < 18) {
+    let ricPrice = parseFloat(prezzo);
 
+    let minor = ricPrice - (ricPrice * .20)
+
+    console.log(minor);
+}
 
 //ricalcola sottraendo il 40% per gli over 65 anni
 
+if (userAge > 65) {
+    let ricPrice = parseFloat(prezzo);
+
+    let minor = ricPrice - (ricPrice * .40)
+
+    console.log(minor);
+}
 
 
+
+//stampa su schermo prezzo finale
+
+let yourValue = 
+
+document.getElementById("final_price").innerHTML=yourValue
 
 
