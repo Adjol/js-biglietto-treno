@@ -11,7 +11,7 @@
 
 
 const price = parseFloat(0.21)
- 
+
 
 // chiedi quanti chilometri dovra percorrere
 
@@ -25,16 +25,18 @@ const userAge = parseInt(prompt("Inserisci la tua età"));
 
 //calcola il prezzo del biglietto (0.21 * (k))
 
-let prezzo =  price * distance;
+let normalPrezzo =  price * distance;
+document.getElementById("final_price").innerHTML=normalPrezzo.toFixed(2);
 
-console.log(prezzo);
+console.log(normalPrezzo);
 
 //ricalcola sottraendo il 20% per i minori di anni 18
 
 if (userAge < 18) {
-    let ricPrice = parseFloat(prezzo);
+    let ricPrice = parseFloat(normalPrezzo);
 
-    let minor = ricPrice - (ricPrice * .20)
+    let minor = ricPrice - (ricPrice * .20);
+    document.getElementById("final_price").innerHTML=minor.toFixed(2); 
 
     console.log(minor);
 }
@@ -42,19 +44,11 @@ if (userAge < 18) {
 //ricalcola sottraendo il 40% per gli over 65 anni
 
 if (userAge > 65) {
-    let ricPrice = parseFloat(prezzo);
+    let ricPrice = parseFloat(normalPrezzo);
 
-    let minor = ricPrice - (ricPrice * .40)
+    let over = ricPrice - (ricPrice * .40);
+    document.getElementById("final_price").innerHTML=over.toFixed(2);
 
-    console.log(minor);
+
+    console.log(over);
 }
-
-
-
-//stampa su schermo prezzo finale
-
-let yourValue = 
-
-document.getElementById("final_price").innerHTML=yourValue
-
-
